@@ -12,6 +12,7 @@ public class CustomerController {
     public String listAllCustomers(Model model) {
 		List<Customer> lista = new ArrayList<Customer>();
 		lista.add(new Customer("João", "Silva"));
+		lista.add(new Customer("Letícia", "Moura"));
 		model.addAttribute("cs", lista);
         return "customersList";
     }
