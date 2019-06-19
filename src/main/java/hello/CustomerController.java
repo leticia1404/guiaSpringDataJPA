@@ -10,7 +10,9 @@ public class CustomerController {
 
     @GetMapping("/customers")
     public String listAllCustomers(Model model) {
-		model.addAttribute("cs", new ArrayList<Customer>());
+		List<Customer> lista = new ArrayList<Customer>();
+		lista.add(new Customer("João", "Silva"));
+		model.addAttribute("cs", lista);
         return "customersList";
     }
 
