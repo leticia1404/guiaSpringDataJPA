@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
@@ -31,7 +30,7 @@ public class CustomerController {
         //mav.addObject(this.customers.findById(id));
         //return mav;		
     	Optional<Customer> c = customers.findById(id);
-    	model.addAttribute("customers", c);
+    	model.addAttribute("customer", c.get());
         return "customersDetails";
     }
     
